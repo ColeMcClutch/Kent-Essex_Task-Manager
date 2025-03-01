@@ -1,9 +1,16 @@
-import Home from "./pages/Home";
+import Navbar from "./components/Navbar";
+import TaskList from "./components/TaskList";
+import TaskForm from "./components/TaskForm";
+import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Home />
+      <Navbar />
+      <div className="content">
+        <TaskForm onTaskAdded={() => window.location.reload()} />
+        <TaskList />
+      </div>
     </div>
   );
 }
