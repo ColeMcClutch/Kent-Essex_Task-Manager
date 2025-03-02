@@ -1,19 +1,20 @@
 import { useState } from "react";
 import { createTask } from "../api/tasks";
+import "./TaskForm.css"; // Import CSS for styling
 
 const TaskForm = ({ onTaskAdded }) => {
   const [title, setTitle] = useState("");
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!title) return;
+    if (!title.trim()) return;
     await createTask(title);
     setTitle("");
     onTaskAdded();
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="task-form" onSubmit={handleSubmit}>
       <input
         type="text"
         value={title}
