@@ -1,0 +1,22 @@
+.task-container {
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .task-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .task-card {
+    background: #f4f4f4;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
+  
