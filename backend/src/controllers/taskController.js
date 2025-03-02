@@ -16,7 +16,7 @@ exports.createTask = async (req, res) => {
 };
 
 
-// Get all tasks
+// Retrieve all tasks
 exports.getTasks = async (req, res) => {
   try {
     const tasks = await Task.find();
@@ -26,7 +26,7 @@ exports.getTasks = async (req, res) => {
   }
 };
 
-// Update task status
+// Update the status of a task
 exports.updateTask = async (req, res) => {
   try {
     const { status } = req.body;
@@ -37,7 +37,7 @@ exports.updateTask = async (req, res) => {
   }
 };
 
-// Delete task
+// Delete the task
 exports.deleteTask = async (req, res) => {
   try {
     await Task.findByIdAndDelete(req.params.id);
