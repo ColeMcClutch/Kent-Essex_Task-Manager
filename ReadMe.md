@@ -44,4 +44,4 @@
 //Step 2: When launched, ensure the Docker Engine is running
 //Step 3: When confirmed, run the following command from the main director terminal: 'docker-compose up --build'
 //Step 4: Wait for installation and launch
- 
+//Warning: At the moment, there seems to be an issue when launching the build command. 
