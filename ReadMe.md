@@ -49,4 +49,10 @@
 
 //I hope you found these instructions helpful
 
-
+//My thought process:
+/*I based the idea of this code around a similar project back in thrid year about building a social network page for a small charity. The page 
+followed similar guidelines and worked out very so I figured use a similar strategy that I was familiar with. I used a cluster in MongoDB for storing
+the tasks, and made the proper connections to it through the env file. After that I designed different files for the different functions. I made a files for 
+how a task should be modelled, how to control them and other configurations like the routes and asynchornous calls. Then when it came to frontend, it was relatively easy. I made different
+files to work for the overall look, the task objects, their styles and how to organize them. Once I linked them back to the backend, i did some practice before working on the docker, and everything was set. I am still fairly new to docker so i had to do a little reasearch on how to make that work. It was one of the bigger hassles, but i got it working in the end. I hope
+you find this program just as interesting as I did when making it.*/
