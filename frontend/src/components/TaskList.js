@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { getTasks, deleteTask, updateTask } from "../api/tasks";
 import TaskItem from "./TaskItem";
+import "./TaskList.css"; // Import CSS for styling
 
 const TaskList = () => {
   const [tasks, setTasks] = useState([]);
@@ -10,8 +11,13 @@ const TaskList = () => {
   }, []);
 
   const fetchTasks = async () => {
-    const data = await getTasks();
-    setTasks(data);
+    try {
+      const data = await getTasks();
+      console.log("✅ Fetched tasks:", data); // Debugging log
+      setTasks(data);
+    } catch (error) {
+      console.error("❌ Error fetching tasks:", error);
+    }
   };
 
   const handleUpdate = async (id, status) => {
@@ -24,32 +30,18 @@ const TaskList = () => {
     fetchTasks();
   };
 
-  const groupedTasks = {
-    pending: tasks.filter((task) => task.status === "pending"),
-    inProgress: tasks.filter((task) => task.status === "in-progress"),
-    completed: tasks.filter((task) => task.status === "completed"),
-  };
-
   return (
     <div className="task-container">
-      <div className="task-column">
-        <h2>Pending</h2>
-        {groupedTasks.pending.map((task) => (
-          <TaskItem key={task._id} task={task} onUpdate={handleUpdate} onDelete={handleDelete} />
-        ))}
-      </div>
-      <div className="task-column">
-        <h2>In Progress</h2>
-        {groupedTasks.inProgress.map((task) => (
-          <TaskItem key={task._id} task={task} onUpdate={handleUpdate} onDelete={handleDelete} />
-        ))}
-      </div>
-      <div className="task-column">
-        <h2>Completed</h2>
-        {groupedTasks.completed.map((task) => (
-          <TaskItem key={task._id} task={task} onUpdate={handleUpdate} onDelete={handleDelete} />
-        ))}
-      </div>
+      <h2>Task List</h2>
+      {tasks.length === 0 ? (
+        <p>No tasks found.</p>
+      ) : (
+        <ul className="task-list">
+          {tasks.map((task) => (
+            <TaskItem key={task._id} task={task} onUpdate={handleUpdate} onDelete={handleDelete} />
+          ))}
+        </ul>
+      )}
     </div>
   );
 };
