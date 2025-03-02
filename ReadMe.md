@@ -39,6 +39,9 @@
 //Step 8: When finished using program, closing the tab will shut down the window but you must terminate the batch job on the terminal using "^C" on the frontend window for full shutdown
 //Step 8a: Perform "^C" on the backend to shut down the server, but only nessecary when fully done with all uses of the program.
 
-
-//Problems
-//Docker: I unfortunately ran into some problems with my Docker Desktop, so I wasn't quite able to test my docker build. But it should be working. Use 'docker-compose up --build' with docker running to launch the entire app
+//Docker Launch:
+//Step 1: Open Docker Desktop
+//Step 2: When launched, ensure the Docker Engine is running
+//Step 3: When confirmed, run the following command from the main director terminal: 'docker-compose up --build'
+//Step 4: Wait for installation and launch
+ 
