@@ -1,3 +1,4 @@
+//Library and other method connections
 const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -14,7 +15,7 @@ app.use(bodyParser.json());
 // Routes
 app.use("/api/tasks", taskRoutes);
 
-// Start Server
+// Start Server on PORT
 const PORT = process.env.PORT || 5000;
 connectDB();
 
