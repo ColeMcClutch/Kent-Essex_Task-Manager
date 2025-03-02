@@ -4,13 +4,17 @@ const Task = require("../models/taskModel");
 exports.createTask = async (req, res) => {
   try {
     const { title } = req.body;
-    const task = new Task({ title });
+    if (!title) {
+      return res.status(400).json({ message: "Title is required" });
+    }
+    const task = new Task({ title, status: "pending" }); 
     await task.save();
     res.status(201).json(task);
   } catch (error) {
-    res.status(500).json({ message: "Error creating task" });
+    res.status(500).json({ message: "Error creating task", error });
   }
 };
+
 
 // Get all tasks
 exports.getTasks = async (req, res) => {
