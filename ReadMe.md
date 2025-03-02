@@ -18,7 +18,7 @@
 
 //Launching the backend
 //=====================
-//Step 1: Start a new terminal
+//Step 1: Start a second terminal
 //Step 2: Change direction to the 'frontend' folder
 //Step 3: Run 'npm install' for installing needed libraries
 //Step 4: Run 'npm start' to begin launch
